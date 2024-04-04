@@ -6,7 +6,7 @@ import {
   sequence,
   style,
   ɵPRE_STYLE
-} from "./chunk-REULVSGQ.js";
+} from "./chunk-KC6EHIAB.js";
 import {
   BrowserModule,
   DomRendererFactory2
@@ -32,8 +32,8 @@ import {
   ɵɵdefineNgModule,
   ɵɵinject
 } from "./chunk-QHIF2FQR.js";
-import "./chunk-V2DXGMIT.js";
 import "./chunk-UKEHM6V6.js";
+import "./chunk-V2DXGMIT.js";
 import {
   __objRest,
   __spreadValues
@@ -4150,7 +4150,7 @@ export {
 
 @angular/animations/fesm2022/browser.mjs:
   (**
-   * @license Angular v17.2.3
+   * @license Angular v17.2.2
    * (c) 2010-2022 Google LLC. https://angular.io/
    * License: MIT
    *)
