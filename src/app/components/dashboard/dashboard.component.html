@@ -1,0 +1,39 @@
+
+<div class="container mt-2 text-center">
+  <h2>Tasks</h2>
+  <button class="btn btn-primary mb-3" (click)="directionNewTask()">Criar Nova Tarefa</button>
+  <div class="mb-3">
+    <input type="file" (change)="onFileSelected($event)" accept=".csv,.xls,.xlsx">
+    <button class="btn btn-success" (click)="uploadTasks()">Importar Tarefas</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Descriptions</th>
+        <th scope="col">Status</th>
+        <th scope="col">Data Criação</th>
+        <th scope="col">Data atualização</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of taskList; track $index){
+        <tr>
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.title }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.status}}</td>
+          <td>{{ formatDate(item.created_at) }}</td>
+          <td>{{ formatDate(item.updated_at) }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteTask(item.id)">Excluir</button> 
+            <button class="btn btn-info" (click)="updateTask(item.id)">Atualizar</button> 
+          </td>
+        </tr>
+      }
+      
+      
+    </tbody>
+  </table>
+</div>
