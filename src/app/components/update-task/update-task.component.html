@@ -1,6 +1,6 @@
 <div class="container">
-    <h2>Atualizar Tarefa</h2>
-    <form >
+    <h2 class="text-center mt-3">Atualizar Tarefa</h2>
+    <form class="mt-4">
         <div class="form-group">
             <label for="title">Título:</label>
             <input type="text" class="form-control" id="title" [(ngModel)]="title" name="title">
@@ -16,7 +16,9 @@
                 <option value="concluido">Concluído</option>
             </select>
         </div>
-        <button type="button" (click)="updateTask()"class="btn btn-primary">Atualizar Tarefa</button>
-        <button (click)="redirection()" class="btn btn-primary">Voltar</button>
+        <div class="d-grid gap-2">
+            <button type="button" (click)="updateTask()" class="btn btn-primary">Atualizar Tarefa</button>
+            <button (click)="redirection()" class="btn btn-secondary mt-2">Voltar</button>
+        </div>
     </form>
 </div>

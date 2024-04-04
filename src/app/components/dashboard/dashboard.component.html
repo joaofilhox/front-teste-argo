@@ -1,39 +1,41 @@
-
-<div class="container mt-2 text-center">
-  <h2>Tasks</h2>
-  <button class="btn btn-primary mb-3" (click)="directionNewTask()">Criar Nova Tarefa</button>
-  <div class="mb-3">
-    <input type="file" (change)="onFileSelected($event)" accept=".csv,.xls,.xlsx">
-    <button class="btn btn-success" (click)="uploadTasks()">Importar Tarefas</button>
+<div class="container mt-2">
+  <h2 class="text-center">Tasks</h2>
+  <div class="text-center">
+    <button class="btn btn-primary mb-3" (click)="directionNewTask()">Criar Nova Tarefa</button>
   </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Titulo</th>
-        <th scope="col">Descriptions</th>
-        <th scope="col">Status</th>
-        <th scope="col">Data Criação</th>
-        <th scope="col">Data atualização</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for (item of taskList; track $index){
+  <div class="mb-3 text-center">
+    <input type="file" class="form-control-file" (change)="onFileSelected($event)" accept=".csv,.xls,.xlsx">
+    <button class="btn btn-success mt-2" (click)="uploadTasks()">Importar Tarefas</button>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
         <tr>
-          <th scope="row">{{ item.id }}</th>
-          <td>{{ item.title }}</td>
-          <td>{{ item.description }}</td>
-          <td>{{ item.status}}</td>
-          <td>{{ formatDate(item.created_at) }}</td>
-          <td>{{ formatDate(item.updated_at) }}</td>
-          <td>
-            <button class="btn btn-danger" (click)="deleteTask(item.id)">Excluir</button> 
-            <button class="btn btn-info" (click)="updateTask(item.id)">Atualizar</button> 
-          </td>
+          <th scope="col">ID</th>
+          <th scope="col">Título</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Status</th>
+          <th scope="col">Data Criação</th>
+          <th scope="col">Data Atualização</th>
+          <th scope="col">Ações</th>
         </tr>
-      }
-      
-      
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        @for (item of taskList; track $index){
+          <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.status}}</td>
+            <td>{{ formatDate(item.created_at) }}</td>
+            <td>{{ formatDate(item.updated_at) }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="deleteTask(item.id)">Excluir</button> 
+              <button class="btn btn-info btn-sm" (click)="updateTask(item.id)">Atualizar</button> 
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 </div>

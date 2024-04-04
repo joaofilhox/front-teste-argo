@@ -4,26 +4,25 @@
     <h3>Register</h3>
 
     <div class="form-floating mb-3 mt-3">
-      <input type="text" [(ngModel)]="username"  class="form-control" placeholder="Username...">
-      <label >Username</label>
-    </div>    
-    <div class="form-floating mb-3">
-      <input type="email" [(ngModel)]="email" class="form-control" placeholder="Email...">
-      <label >Email</label>
+      <input type="text" [(ngModel)]="username" class="form-control" id="username" placeholder=" ">
+      <label for="username">Username</label>
     </div>
     <div class="form-floating mb-3">
-      <input type="password" [(ngModel)]="password" class="form-control" placeholder="Password">
-      <label >Password</label>
+      <input type="email" [(ngModel)]="email" class="form-control" id="email" placeholder=" ">
+      <label for="email">Email</label>
     </div>
     <div class="form-floating mb-3">
-      <input type="password" [(ngModel)]="confirmPassword" class="form-control" placeholder="Repeat Password">
-      <label >Repeat Password</label>
+      <input type="password" [(ngModel)]="password" class="form-control" id="password" placeholder=" ">
+      <label for="password">Password</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="password" [(ngModel)]="confirmPassword" class="form-control" id="confirmPassword" placeholder=" ">
+      <label for="confirmPassword">Repeat Password</label>
     </div>
     <div class="d-grid gap-2">
-      <button class="btn btn-primary" (click)="addUser()" type="button" >Submit</button>      
+      <button class="btn btn-primary" (click)="addUser()" type="button">Submit</button>
     </div>
-    <p>Do you already have an account? <a routerLink="/login">Login</a></p>
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
   </div>
   <app-spinner *ngIf="loading"></app-spinner>
-
 </div>

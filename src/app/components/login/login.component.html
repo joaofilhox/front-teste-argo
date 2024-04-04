@@ -5,17 +5,17 @@
     <h3>Login</h3>    
     
     <div class="form-floating mb-3 mt-3">
-      <input type="email" [(ngModel)]="username" class="form-control" placeholder="Name...">
-      <label >Username</label>
+      <input type="text" [(ngModel)]="username" class="form-control" id="username" placeholder=" ">
+      <label for="username">Username</label>
     </div>
     <div class="form-floating mb-3">
-      <input type="password" [(ngModel)]="password" class="form-control" placeholder="Password">
-      <label >Password</label>
+      <input type="password" [(ngModel)]="password" class="form-control" id="password" placeholder=" ">
+      <label for="password">Password</label>
     </div>
     <div class="d-grid gap-2">
       <button class="btn btn-primary" type="button" (click)="login()">Submit</button>      
     </div>
-    <p>Do you not have an account? <a routerLink="/signIn">Register</a></p>
+    <p>Don't have an account? <a routerLink="/signIn">Register</a></p>
   </div>
   <app-spinner *ngIf="loading" ></app-spinner>
 </div>
