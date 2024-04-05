@@ -50,7 +50,7 @@ export class SignInComponent implements OnInit {
     }
 
     if(this.password !== this.confirmPassword){
-      this.toaster.error('Os passwords inseridos não coinciden', 'Error',
+      this.toaster.error('Os passwords inseridos não coincidem.', 'Error',
       {
         timeOut: 1000,
         positionClass: 'toast-bottom-right',
@@ -70,14 +70,13 @@ export class SignInComponent implements OnInit {
     this._userService.signIn(user).subscribe({
       next: (v) => {
         this.loading = false;
-        this.toaster.success(`O usuario ${this.username} fue registrado con exito`, "Usuario registrado")
+        this.toaster.success(`O usuário ${this.username} foi registrado com sucesso.`, "Usuario registrado")
         this.router.navigate(['/login']);
       },
       error: (e: HttpErrorResponse) => {
         this.loading = false;
         this._errorService.msjError(e);
       },
-      complete: () => console.info('complete') 
     })
   }
 

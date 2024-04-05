@@ -13,7 +13,7 @@ export class ErrorService {
     if(e.error.msg){
       this.toaster.error(e.error.msg, "Error");
     } else {
-      this.toaster.error('Erro, comunique o admin', 'Error')
+      this.toaster.error('Oops! Um erro ocorreu. Por favor, entre em contato com o administrador.', 'Error')
     }
   }
 }

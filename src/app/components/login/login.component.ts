@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit{
   login(){
     
     if(this.username == '' || this.password == ''){
-      this.toastr.error('Preencha todos os campos!', 'Error');
+      this.toastr.error('Por favor, preencha todos os campos!', 'Error');
       return
     }
 
