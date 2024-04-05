@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import {  ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../interfaces/task';
 import { ToastrService } from 'ngx-toastr';
@@ -19,16 +19,18 @@ export class CreateTaskComponent implements OnInit {
   status: string = '';
   loading: boolean = false;
 
-  toaster = inject(ToastrService);
-
   constructor(
     private taskService: TaskService,
     private router: Router,
     private toastr: ToastrService,
+    private route: ActivatedRoute,
+
   ) { }
 
   ngOnInit(): void {
-
+    if (!localStorage.getItem('token')) {
+      this.router.navigate(['/login']);
+    }
   }
 
   createTask(): void {
@@ -54,7 +56,7 @@ export class CreateTaskComponent implements OnInit {
     this.loading = true;
 
     this.taskService.createNewTask(newTask).subscribe({
-      next: (createdTask: any) => {
+      next: () => {
         this.loading = false;
         this.toastr.success('Tarefa criada com sucesso.', 'Sucesso');
         this.router.navigate(['/dashboard']);
@@ -64,7 +66,6 @@ export class CreateTaskComponent implements OnInit {
         console.error(err);
         this.toastr.error('Ocorreu um erro ao criar a tarefa. Por favor, tente novamente mais tarde.', 'Erro');
       },
-      complete: () => console.info('complete')
     })
 
   }

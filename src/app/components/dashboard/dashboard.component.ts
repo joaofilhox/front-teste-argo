@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/update-task', taskId]);
   }
 
-  directionNewTask(): void {
+  createTask(): void {
     this.router.navigate(['/create-task']);
   }
 

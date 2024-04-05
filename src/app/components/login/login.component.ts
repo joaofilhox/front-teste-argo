@@ -37,8 +37,6 @@ export class LoginComponent implements OnInit{
 
   login(){
     
-    console.log(this.username);
-    
     if(this.username == '' || this.password == ''){
       this.toastr.error('Preencha todos os campos!', 'Error');
       return

@@ -28,6 +28,9 @@ export class UpdateTaskComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (!localStorage.getItem('token')) {
+      this.router.navigate(['/login']);
+    } else {
     this.route.params.subscribe(params => {
       this.id = params['id']
     })
@@ -42,6 +45,7 @@ export class UpdateTaskComponent implements OnInit {
       }
 
     });
+  }
 
   }
 
